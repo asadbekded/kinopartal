@@ -19,13 +19,13 @@ export const Home = () => {
   return (
     <div>
       {
-        films.length ? (
+        films.length && (
         <StledPopularList>
           {
          films.map(el => (
             <Card key={el.id} el={el}/>))
           }
-        </StledPopularList> ) : (<StyledAnimatsa src={Animatsa} alt='imd-animsa' width={200} height={200}/>)
+        </StledPopularList> ) && (<StyledAnimatsa src={Animatsa} alt='imd-animsa' width={200} height={200}/>)
       };
     </div>
   )
