@@ -4,6 +4,7 @@ import { GlobalStyles } from "./global.styles";
 import { Home } from './pages/Home/home.component';
 import { Latest } from "./pages/Latest";
 import { Popular } from './pages/Popular/index';
+import { SingleMovie } from "./pages/SingleMovie";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/popular" element={<Popular/>}/>
         <Route path="/latest" element={<Latest/>}/>
+        <Route path="/movie/:id" element={<SingleMovie/>}/>
       </Routes>
     </div>
   );

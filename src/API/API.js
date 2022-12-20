@@ -5,7 +5,11 @@ const baseUrl = 'https:/api.themoviedb.org/3/';
 export const baseImgUrl = "https://image.tmdb.org/t/p/w500/";
 
 export const apis = {
-   getPopularMovies : () => axios.get(baseUrl + 'movie/popular?' + 'api_key=' + API_KEY),
+   getPopularMovies : () => axios.get(baseUrl + 'movie/popular?', {
+      params: {
+         api_key: API_KEY,
+      },
+   }),
 
    getLatestMovies : () => axios.get(baseUrl + 'movie/upcoming?', {
       params:{
@@ -13,6 +17,11 @@ export const apis = {
       },
    }),
    getTopMovies : () => axios.get(baseUrl + 'movie/top_rated?', {
+      params:{
+         api_key: API_KEY,
+      },
+   }),
+   getMovies : (id) => axios.get(baseUrl + '/movie/' + id, {
       params:{
          api_key: API_KEY,
       },

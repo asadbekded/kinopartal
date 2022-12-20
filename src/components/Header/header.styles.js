@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.header`
 display: flex;
@@ -26,8 +26,15 @@ margin-right: 20px;
 export const StyledLink = styled(Link)``;
 
 export const StyledNavLink = styled(NavLink)`
-font-size: 18px;
+&{font-size: 18px;
 color: #fff;
+transition: 1s;
+}
+&:hover{
+    color: red;
+    transform: scale(1.1);
+    z-index: 1;
+}
 `;
 
 export const StyledSearch = styled.input`
