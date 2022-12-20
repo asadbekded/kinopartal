@@ -6,11 +6,11 @@ import { StledPopularList, StyledAnimatsa } from './home.styles.js';
 
 export const Home = () => {
 
-  const [film , setFilm] = useState([]);
+  const [films , setFilms] = useState([]);
 
   const getTopMovie = async () => {
     const res = await apis.getTopMovies();
-    setFilm(res.data.results)
+    setFilms(res.data.results)
   }  
   useEffect(() => {
     getTopMovie()
@@ -19,10 +19,10 @@ export const Home = () => {
   return (
     <div>
       {
-        film.length ? (
+        films.length ? (
         <StledPopularList>
           {
-         film.map((el) => (
+         films.map((el) => (
             <Card key={el.id} el={el}/>
          ))}
         </StledPopularList> )
