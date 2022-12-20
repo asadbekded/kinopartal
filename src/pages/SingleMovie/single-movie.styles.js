@@ -63,6 +63,7 @@ margin-bottom: 8px;
 `;
 
 export const StyledSingCardTime = styled.time`
+display: block;
 font-family: "Arial";
 margin: 0px;
 padding: 0px;

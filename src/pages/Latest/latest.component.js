@@ -17,7 +17,7 @@ export const Latest = () => {
   },[]);
 
   return (
-    <>
+    <div>
       {
         film.length ? (
         <StledPopularList>
@@ -28,6 +28,6 @@ export const Latest = () => {
         </StledPopularList> )
          : (<StyledAnimatsa src={Animatsa} alt='imd-animsa' width={200} height={200}/>)
       }
-    </>
+    </div>
   )
 }
