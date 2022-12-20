@@ -22,12 +22,11 @@ export const Home = () => {
         films.length ? (
         <StledPopularList>
           {
-         films.map((el) => (
-            <Card key={el.id} el={el}/>
-         ))}
-        </StledPopularList> )
-         : (<StyledAnimatsa src={Animatsa} alt='imd-animsa' width={200} height={200}/>)
-      }
+         films.map(el => (
+            <Card key={el.id} el={el}/>))
+          }
+        </StledPopularList> ) : (<StyledAnimatsa src={Animatsa} alt='imd-animsa' width={200} height={200}/>)
+      };
     </div>
   )
 }
