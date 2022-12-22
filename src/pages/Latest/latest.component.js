@@ -19,7 +19,7 @@ export const Latest = () => {
   return (
     <div>
       {
-        filmLatest.length ? (
+        filmLatest ? (
         <StledPopularList>
           {
          filmLatest.map((el) => (

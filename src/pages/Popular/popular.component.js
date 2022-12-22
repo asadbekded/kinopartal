@@ -19,7 +19,7 @@ export const Popular = () => {
   return (
     <div>
       {
-        film.length ? (
+        film ? (
         <StledPopularList>
           {
          film.map((el) => (

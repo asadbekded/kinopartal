@@ -1,0 +1,13 @@
+.carousel-box{
+    width: 800px;
+    padding: 0px;
+    margin-left: 50px;
+}
+.carouselimg-box{
+border-radius: 14px;
+transition: 1s;
+}
+.carouselimg-box:hover{
+    transform: scale(1.1);
+    z-index: -1;
+}
