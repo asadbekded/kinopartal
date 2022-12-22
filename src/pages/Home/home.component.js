@@ -19,7 +19,7 @@ export const Home = () => {
   return (
     <div>
       {
-        films ? (
+        films?.length ? (
         <StledPopularList>
           {
          films.map(el => (

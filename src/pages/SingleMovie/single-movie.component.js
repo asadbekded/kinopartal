@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { apis, baseImgUrl } from "../../API/API";
-import { StyledBtn, StyledCardImg, StyledImg, StyledPeopleBox, StyledPeopleContent, StyledSingCardAverage, StyledSingCardBox, StyledSingCardBudget, StyledSingCardContent, StyledSingCardCount, StyledSingCardStr, StyledSingCardText, StyledSingCardTime, StyledSingCardTitle, StyledSingle } from "./single-movie.styles";
+import { StyledBtn, StyledCardImg, StyledFilmBtn, StyledFilmLink, StyledImg, StyledPeopleBox, StyledPeopleContent, StyledSingCardAverage, StyledSingCardBox, StyledSingCardBudget, StyledSingCardContent, StyledSingCardCount, StyledSingCardStr, StyledSingCardText, StyledSingCardTime, StyledSingCardTitle, StyledSingle } from "./single-movie.styles";
 import Exit from "../../assets/images/left.png";
 import { Carousel } from "../../components/Carousel/carousel.component";
 import { CarouselFilm } from "../../components/CarouselFilm/carousel-film.component";
@@ -50,7 +50,12 @@ export const SingleMovie = () => {
 
 
         <StyledSingCardBox>
+             <div>
             <StyledCardImg src={baseImgUrl + movie.poster_path} alt={movie.title} width={150} height={100}/>
+             <StyledFilmBtn>
+                   <StyledFilmLink to={`/vidios/${movie.id}`}>Vidio treler</StyledFilmLink>
+                </StyledFilmBtn>
+             </div>
             <StyledSingCardContent>
                 <StyledSingCardTitle>{movie.original_title}</StyledSingCardTitle>
                 <StyledSingCardAverage><StyledSingCardStr>Average: </StyledSingCardStr>{movie.vote_average}</StyledSingCardAverage>
@@ -61,9 +66,6 @@ export const SingleMovie = () => {
             </StyledSingCardContent>
         </StyledSingCardBox>
         
-        <button>
-        <Link to={`/vidios/${movie.id}`}>Send</Link>
-        </button>
 
         <StyledPeopleContent>
               <CarouselFilm peopleFilm={peopleFilm}/>

@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledSingle = styled.div`
+height: 100%;
 padding: 40px;
-height: 100vh;
 background-image: ${(props) => props.img ? `url(${"https://image.tmdb.org/t/p/original/" + props.img})` : "url(https://via.placeholder.com/300)"};
 background-position: center top;
 background-repeat: no-repeat;
-background-size: 100%;
+background-size: cover;
 `;
 
 export const StyledBtn = styled.button`
@@ -110,4 +111,17 @@ width: 1000px;
 display: flex;
 align-items: center;
 justify-content: space-between;
+`;
+
+export const StyledFilmBtn = styled.button`
+border: none;
+border-radius: 20px;
+background-color: teal;
+margin-top: 8px;
+padding: 6px 15px;
+`;
+export const StyledFilmLink = styled(Link)`
+text-decoration: none;
+font-size: 14px;
+color: #fff;
 `;
