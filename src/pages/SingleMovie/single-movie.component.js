@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import { apis, baseImgUrl } from "../../API/API";
-import { StyledBtn, StyledCardImg, StyledFilmBtn, StyledFilmLink, StyledImg, StyledPeopleBox, StyledPeopleContent, StyledSingCardAverage, StyledSingCardBox, StyledSingCardBudget, StyledSingCardContent, StyledSingCardCount, StyledSingCardStr, StyledSingCardText, StyledSingCardTime, StyledSingCardTitle, StyledSingle } from "./single-movie.styles";
+import { StyledBtn, StyledCardImg, StyledFilmBtn, StyledFilmLink, StyledImg, StyledPeopleBox, StyledPeopleContentCarousel, StyledSingCardAverage, StyledSingCardBox, StyledSingCardBudget, StyledSingCardContent, StyledSingCardCount, StyledSingCardStr, StyledSingCardText, StyledSingCardTime, StyledSingCardTitle, StyledSingle } from "./single-movie.styles";
 import Exit from "../../assets/images/left.png";
 import { Carousel } from "../../components/Carousel/carousel.component";
 import { CarouselFilm } from "../../components/CarouselFilm/carousel-film.component";
@@ -43,9 +43,9 @@ export const SingleMovie = () => {
                 <StyledImg src={Exit} alt='exit img' width={40} height={30}/>
             </StyledBtn>
 
-            <StyledPeopleContent>
+            <StyledPeopleContentCarousel>
               <Carousel people={people}/>
-            </StyledPeopleContent>
+            </StyledPeopleContentCarousel>
         </StyledPeopleBox>
 
 
@@ -67,9 +67,9 @@ export const SingleMovie = () => {
         </StyledSingCardBox>
         
 
-        <StyledPeopleContent>
+        <StyledPeopleContentCarousel>
               <CarouselFilm peopleFilm={peopleFilm}/>
-            </StyledPeopleContent>
+        </StyledPeopleContentCarousel>
     </StyledSingle>
   )
 }

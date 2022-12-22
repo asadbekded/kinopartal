@@ -106,7 +106,7 @@ align-items: center;
 justify-content: space-between;
 `;
 
-export const StyledPeopleContent = styled.div`
+export const StyledPeopleContentCarousel = styled.div`
 width: 1000px;
 display: flex;
 align-items: center;

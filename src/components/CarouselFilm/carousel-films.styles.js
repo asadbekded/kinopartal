@@ -12,5 +12,6 @@ height: 100px;
 
 export const StyledFilmLink = styled(Link)`
 border: none;
+background-color: transparent;
 text-decoration: none;
 `;
