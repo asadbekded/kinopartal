@@ -17,3 +17,10 @@ display: block;
 margin: 0px auto;
 margin-top: 30px;
 `;
+
+export const StyledPaginition = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 10px;
+`;

@@ -43,7 +43,7 @@ border-radius: 10px;
 export const StyledCardTitle = styled.h3`
 font-family: "Arial";
 font-weight: 400px;
-font-size: 18px;
+font-size: 16px;
 color: #fff;
 margin: 0px;
 margin-top: 8px;

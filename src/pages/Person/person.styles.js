@@ -14,7 +14,7 @@ margin-bottom: 50px;
 
 export const StyledPeopleBox = styled.div`
 width: 100%;
-max-width: 300px;
+max-width: 500px;
 margin-left: 60px;
 `;
 

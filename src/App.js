@@ -7,6 +7,7 @@ import { Person } from "./pages/Person";
 import { Popular } from './pages/Popular/index';
 import { SingleMovie } from "./pages/SingleMovie";
 import { Vidio } from "./components/Vidio/vidio.component";
+import { Search } from "./components/Search/search.component";
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
         <Route path="/movie/:id" element={<SingleMovie/>}/>
         <Route path="/person/:id" element={<Person/>}/>
         <Route path="/vidios/:id" element={<Vidio/>}/>
+        <Route path="/search/:searchQuery" element={<Search/>}/>
       </Routes>
     </div>
   );
 }
-
 export default App;

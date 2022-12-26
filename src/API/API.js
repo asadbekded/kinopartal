@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const API_KEY = '9bd9d6fdfd477ad4ce71dca61f64f2d0';
+// const API_KEY = '9bd9d6fdfd477ad4ce71dca61f64f2d0';
+
+const API_KEY = '0431834c535ecb8b718ac720e46307f3';
+
+
 const baseUrl = 'https:/api.themoviedb.org/3/';
 export const baseImgUrl = "https://image.tmdb.org/t/p/w500/";
 
@@ -8,6 +12,13 @@ export const apis = {
    getPopularMovies : () => axios.get(baseUrl + 'movie/popular?', {
       params: {
          api_key: API_KEY,
+      },
+   }),
+
+   getMoviePage : (page) => axios.get(baseUrl + `/movie/popular`, {
+      params:{
+         api_key: API_KEY,
+         page: page,
       },
    }),
 
@@ -48,6 +59,11 @@ export const apis = {
       },
    }),
    getMovieVidioFilm : (id) => axios.get(baseUrl + `/movie/${id}/videos`, {
+      params:{
+         api_key: API_KEY,
+      },
+   }),
+   getMovieSearch : (searchQuery) => axios.get(baseUrl + `/search/movie?query=` + searchQuery, {
       params:{
          api_key: API_KEY,
       },

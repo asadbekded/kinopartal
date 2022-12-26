@@ -1,7 +1,20 @@
 import { StyledHeader, StyledItem, StyledLink, StyledList, StyledNavbar, StyledNavLink, StyledSearch } from "./header.styles"
 import Logo from '../../assets/images/logo.png';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+
+   const [ searchVal, setSearchVal ] = useState('')
+   const navigate = useNavigate()
+
+   useEffect(() => {
+      if(searchVal.length > 0){
+         navigate("/search/" + searchVal);
+      }else{
+         navigate('/');
+      }
+   }, [searchVal])
    
   return (
     <StyledHeader>
@@ -19,7 +32,7 @@ export const Header = () => {
             </StyledItem>
          </StyledList>
       </StyledNavbar>
-      <StyledSearch type='search' placeholder="Search film..."/>
+      <StyledSearch onChange={(evt) => setSearchVal(evt.target.value)} type='search' placeholder="Search film..."/>
     </StyledHeader>
   )
 }
