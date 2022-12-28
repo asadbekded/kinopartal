@@ -3,18 +3,23 @@ import { apis } from '../../API/API.js';
 import { Card } from '../../components/Card/card.component.js';
 import Animatsa from '../../assets/images/animatsa.svg';
 import { StledPopularList, StyledAnimatsa } from './latest.styles.js';
+import { StyledPaginition } from '../Home/home.styles.js';
+import { Paginations } from '../../components/Paginations/paginations.component.js';
 
 export const Latest = () => {
 
   const [filmLatest , setFilmLatest] = useState([]);
+  const [pages, setPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
-  const getLatestMovie = async () => {
-    const res = await apis.getLatestMovies();
+  const getLatestMovie = async (pages) => {
+    const res = await apis.getLatestMovies(pages);
     setFilmLatest(res.data.results)
+    setTotalPages(res.data.total_pages);
   }  
   useEffect(() => {
-    getLatestMovie()
-  },[]);
+    getLatestMovie(pages)
+  },[pages]);
 
   return (
     <div>
@@ -28,6 +33,14 @@ export const Latest = () => {
         </StledPopularList> )
          : (<StyledAnimatsa src={Animatsa} alt='imd-animsa' width={200} height={200}/>)
       }
+
+      <StyledPaginition>
+              <Paginations
+                setPages={setPages}
+                pages={pages}
+                totalPages={totalPages}
+              />
+      </StyledPaginition>
     </div>
   )
 }
