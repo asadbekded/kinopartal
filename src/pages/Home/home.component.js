@@ -9,6 +9,7 @@ import {
 } from "./home.styles.js";
 import { Paginations } from "../../components/Paginations/paginations.component.js";
 
+
 export const Home = () => {
   const [films, setFilms] = useState([]);
   const [pages, setPages] = useState(1);
